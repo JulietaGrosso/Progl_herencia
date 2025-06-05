@@ -1,6 +1,6 @@
 package model;
 
-public class Bicicleta extends Producto{
+public class Bicicleta extends Producto implements Imprimir, Impuesto{
   private int rodado;
   private String color;
 
@@ -37,5 +37,29 @@ public class Bicicleta extends Producto{
         ", descripción= " + getDescripcion() + "/" +
         ", rodado=" + rodado + "/" +
         ", color=" + color;
+  }
+
+
+  @Override
+  public void Mostrar(){
+    super.toString();
+    System.out.println("Bici rodado " + rodado +
+        " Color " + color);
+  }
+
+  @Override
+  public void MostrarDatos() {
+    System.out.println("Muestra los datos de la bicicleta: " + this.toString()
+    + "otra vez");
+  }
+
+  @Override
+  public void MostrarBienvenida() {
+    System.out.println(Imprimir.MENSAJE_BIENVENIDA);
+  }
+
+  @Override
+  public void CalcularImpuesto(double precio) {
+    System.out.println(precio * Impuesto.IVA);
   }
 }

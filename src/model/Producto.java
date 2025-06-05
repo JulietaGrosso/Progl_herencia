@@ -67,17 +67,21 @@ public class Producto {
         "descripcion" + descripcion;
   }
 
+  public void Mostrar(){
+    System.out.println(this.toString());
+  }
+
   @Override
   public boolean equals(Object o){
     if (this == o) return true;
     if(!(o instanceof Producto)) return false;
-    Producto producto1 = (producto) o;
-    if (Double.compare(producto1.producto, precio) !=0) return false;
+    Producto producto1 = (Producto) o;
+    if (Double.compare(producto1.precio, precio) !=0) return false;
     if(!producto.equals(producto1.producto)) return false;
     return descripcion.equals(producto1.descripcion);
   }
 
-  @Override int hashCode(){
+  @Override public int hashCode(){
     int result=1;
     return result;
   }
